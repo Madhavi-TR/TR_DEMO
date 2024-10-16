@@ -5,7 +5,7 @@ annotate service.ZELOQUA with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Label : 'Opp_Id',
+                Label : '{i18n>Oppid}',
                 Value : Opp_Id,
             },
             {
@@ -15,22 +15,22 @@ annotate service.ZELOQUA with @(
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'Opp_Docdate',
+                Label : '{i18n>Oppdocdate}',
                 Value : Opp_Docdate,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'Material',
+                Label : '{i18n>Material}',
                 Value : Material,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'Customer_No',
+                Label : '{i18n>Customerno}',
                 Value : Customer_No,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'Order_Status',
+                Label : '{i18n>Orderstatus}',
                 Value : Order_Status,
             },
             {
