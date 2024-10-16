@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros" xmlns:commons="sap.suite.ui.commons">
+	<VBox id = "v1" core:require="{ handler: 'ztrsoflowdemo/soflow1/ext/fragment/Process_Flow'}">
+		<Button id="b1" text="Process_Flow" press="handler.onPress" />
+              <commons:ProcessFlow id="processflow1" scrollable="false" foldedCorners="true" lanes="\ZSAP_ORDER">
+            <commons:lanes>
+<commons:ProcessFlowLaneHeader id="pf1" laneId="0" text="{Opp_Id}" position="0" iconSrc="sap-icon://order-status"/>            
+    <commons:ProcessFlowLaneHeader id="pf2" laneId="1" text="{Quote_Id}" position="1" iconSrc="sap-icon://order-status"/>
+<commons:ProcessFlowLaneHeader id="pf3" laneId="2" text="{Order_Id}" position="2" iconSrc="sap-icon://order-status"/>
+<commons:ProcessFlowLaneHeader id="pf4" laneId="3" text="{Delivery_Id}" position="3" iconSrc="sap-icon://order-status"/>
+            </commons:lanes>
+        </commons:ProcessFlow>
+	</VBox>
+</core:FragmentDefinition>

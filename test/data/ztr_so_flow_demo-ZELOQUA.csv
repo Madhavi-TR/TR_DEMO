@@ -1,0 +1,3 @@
+Opp_Id;Opp_Status;Opp_Docdate;Material;Customer_No;zSAP_ORDER_Order_Id;zSAP_ORDER_Order_Itemno;zSAP_ORDER_Asset_Id;zCONGA_Quote_Id;zCONGA_Quote_Itemno;zCONGA_Asset_Id
+Opp_123;Completed;2024-10-16;Materi9826;Custom5000;Order_123;7758;Asset_123;Quote_123;0001;Asset_123
+Opp_456;Released;2024-10-16;Materi3816;Custom1439;;;;Quote_456;0001;Asset_456

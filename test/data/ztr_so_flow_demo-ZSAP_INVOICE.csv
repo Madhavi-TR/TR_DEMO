@@ -1,0 +1,1 @@
+Invoice_Id;Invoice_Itemno;Invoice_Status;Invoice_DocDate;Order_Type;Asset_Id;Material_No;Customer_No;Quantity;UOM;Price;Amount_Total;Delivery_Id
