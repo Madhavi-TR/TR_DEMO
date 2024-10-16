@@ -164,6 +164,117 @@ annotate service.ZELOQUA with @(
             Label : 'Customer_No',
             Value : Customer_No,
         },
+        {
+            $Type : 'UI.DataField',
+            Value : Delivery_Id,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Delivery_Status,
+            Label : 'Delivery_Status',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Asset_Id,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Amount_Total,
+            Label : 'Amount_Total',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Invoice_Id,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Invoice_Status,
+            Label : 'Invoice_Status',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Material_No,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Order_Id,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Order_Status,
+            Label : 'Order_Status',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Order_Type,
+            Label : 'Order_Type',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Price,
+            Label : 'Price',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Quantity,
+            Label : 'Quantity',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Quote_Id,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Quote_Status,
+            Label : 'Quote_Status',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : UOM,
+            Label : 'UOM',
+        },
+    ],
+    UI.SelectionFields : [
+        Asset_Id,
+        Customer_No,
+        Invoice_Id,
+        Delivery_Id,
+        Opp_Id,
+        Material_No,
+        Order_Id,
+        Quote_Id,
     ],
 );
+
+annotate service.ZELOQUA with {
+    Asset_Id @Common.Label : 'Asset_Id'
+};
+
+annotate service.ZELOQUA with {
+    Customer_No @Common.Label : 'Customer_No'
+};
+
+annotate service.ZELOQUA with {
+    Invoice_Id @Common.Label : 'Invoice_Id'
+};
+
+annotate service.ZELOQUA with {
+    Delivery_Id @Common.Label : 'Delivery_Id'
+};
+
+annotate service.ZELOQUA with {
+    Opp_Id @Common.Label : 'Opp_Id'
+};
+
+annotate service.ZELOQUA with {
+    Material_No @Common.Label : 'Material_No'
+};
+
+annotate service.ZELOQUA with {
+    Order_Id @Common.Label : 'Order_Id'
+};
+
+annotate service.ZELOQUA with {
+    Quote_Id @Common.Label : 'Quote_Id'
+};
 

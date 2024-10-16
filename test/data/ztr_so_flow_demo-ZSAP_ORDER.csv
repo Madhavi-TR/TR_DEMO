@@ -1,3 +1,3 @@
 Order_Id;Order_Itemno;Asset_Id;Order_Status;Order_DocDate;Order_Type;Material_No;Customer_No;Quantity;UOM;Price;Amount_Total;Quote_Id
-Order_123;7758;Asset_123;Completed;2024-10-16;Physical;Material_No6747;Custom5484;4652;mUS;1309.39;3650.55;Quote_123
-Order_456;8084;Asset_456;Completed;2024-10-16;Physical;Material_No5945;Custom8805;9809;Fk8;1380.02;8836.28;Quote_456
+Order_123;7291;Asset_123;Incomplete;2024-10-16;Subscription;Material_No417;Custom5728;4685;zbn;5082.87;6532.54;Quote_123
+Order_456;4182;Asset_456;Incomplete;2024-10-16;Physical;Material_No5206;Custom5532;7789;5IC;8758.70;1207.59;Quote_456
