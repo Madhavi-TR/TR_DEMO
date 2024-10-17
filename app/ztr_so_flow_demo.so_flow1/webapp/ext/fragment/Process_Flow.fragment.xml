@@ -7,8 +7,8 @@
               <commons:ProcessFlowLaneHeader id="pf2" laneId="1" text="{Quote_Id}" position="1" iconSrc="sap-icon://monitor-payments"/> 
               <commons:ProcessFlowLaneHeader id="pf3" laneId="2" text="{Order_Id}" position="2" iconSrc="sap-icon://payment-approval"/>
               <commons:ProcessFlowLaneHeader id="pf5" laneId="3" text="{Delivery_Id}" position="3" iconSrc="sap-icon://money-bills"/>
-            <commons:ProcessFlowLaneHeader id="pf6" laneId="3" text="{Delivery_Id}" position="4" iconSrc="sap-icon://payment-approval"/>
-            <commons:ProcessFlowLaneHeader id="pf7" laneId="3" text="{Delivery_Id}" position="5" iconSrc="sap-icon://nurse"/>
+            <commons:ProcessFlowLaneHeader id="pf6" laneId="4" text="{Delivery_Id}" position="4" iconSrc="sap-icon://payment-approval"/>
+            <commons:ProcessFlowLaneHeader id="pf7" laneId="5" text="{Delivery_Id}" position="5" iconSrc="sap-icon://nurse"/>
             </commons:lanes>
         </commons:ProcessFlow>
 	</VBox>
