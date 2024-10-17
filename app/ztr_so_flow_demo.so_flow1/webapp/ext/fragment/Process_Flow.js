@@ -1,13 +1,15 @@
 sap.ui.define([
-    "sap/m/MessageToast"
-], function(MessageToast) {
+    "sap/m/MessageToast",
+    "sap/m/Dialog",
+    "sap/ui/core/mvc/Controller",
+    "sap/ui/core/Fragment",
+    "sap/m/Button",
+    "sap/m/Text",
+    "sap/ui/model/odata/v4/ODataModel"
+], function(MessageToast, Dialog, Button, Text, ODataModel,Controller, Fragment) {
     'use strict';
 
     return {
-        onPress: function(oEvent) {
-            MessageToast.show("Custom handler invoked.");
-        },
-
         SendState: function(State) {
             if (State === "Released") {
               return[ { 
@@ -42,9 +44,7 @@ sap.ui.define([
                      } 
         },
 
-
-        onlane1: function(oEvent) {
-            MessageToast.show("Lane 1 pressed.");
+            
         }
-    };
-});
+}
+);

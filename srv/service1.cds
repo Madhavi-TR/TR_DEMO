@@ -45,6 +45,7 @@ service ztr_so_flow_demoService1
         }
         excluding
         {
+            Order_Itemno,
             zSAP_Delivery
         };
 }

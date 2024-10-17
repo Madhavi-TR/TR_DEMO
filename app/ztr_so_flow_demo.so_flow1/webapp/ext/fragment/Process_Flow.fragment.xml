@@ -1,13 +1,13 @@
-<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:commons="sap.suite.ui.commons">
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:commons="sap.suite.ui.commons" controllerName="ztrsoflowdemo.soflow1.ext.fragment.Process_Flow">
     <VBox id="v1" core:require="{ handler: 'ztrsoflowdemo/soflow1/ext/fragment/Process_Flow'}">
         <commons:ProcessFlow id="processflow1" scrollable="false" foldedCorners="true" lanes="\ZSAP_ORDER">
             <commons:lanes>
                 <commons:ProcessFlowLaneHeader id="pf1" laneId="0" text="{Opp_Id}" position="0" iconSrc="sap-icon://order-status"
-                state="{ path: 'Opp_Status', formatter:'handler.SendState' , targetType : 'any' }" press="handler.onlane1"/>            
+                state="{ path: 'Opp_Status', formatter:'handler.SendState' , targetType : 'any' }" />            
                 <commons:ProcessFlowLaneHeader id="pf2" laneId="1" text="{Quote_Id}" position="1" iconSrc="sap-icon://monitor-payments"
                 state="{ path: 'Quote_Status', formatter:'handler.SendState' , targetType : 'any' }"/> 
                 <commons:ProcessFlowLaneHeader id="pf3" laneId="2" text="{Order_Id}" position="2" iconSrc="sap-icon://payment-approval"
-                state="{ path: 'Order_Status', formatter:'handler.SendState' , targetType : 'any' }"/>
+                state="{ path: 'Order_Status', formatter:'handler.SendState' , targetType : 'any' }" press="onlane1"/>
                 <commons:ProcessFlowLaneHeader id="pf5" laneId="3" text="{Delivery_Id}" position="3" iconSrc="sap-icon://money-bills"
                 state="{ path: 'Delivery_Status', formatter:'handler.SendState' , targetType : 'any' }"/>
                 <commons:ProcessFlowLaneHeader id="pf6" laneId="4" text="{Invoice_Id}" position="4" iconSrc="sap-icon://payment-approval"
