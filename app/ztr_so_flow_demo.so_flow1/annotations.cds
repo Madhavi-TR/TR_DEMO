@@ -141,12 +141,12 @@ annotate service.ZELOQUA with @(
     UI.LineItem : [
         {
             $Type : 'UI.DataField',
-            Label : 'Opp_Id',
+            Label : '{i18n>OpportunityId}',
             Value : Opp_Id,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'Opp_Status',
+            Label : '{i18n>OpportunityStatus}',
             Value : Opp_Status,
         },
         {
@@ -247,34 +247,34 @@ annotate service.ZELOQUA with @(
 );
 
 annotate service.ZELOQUA with {
-    Asset_Id @Common.Label : 'Asset_Id'
+    Asset_Id @Common.Label : '{i18n>AssetId}'
 };
 
 annotate service.ZELOQUA with {
-    Customer_No @Common.Label : 'Customer_No'
+    Customer_No @Common.Label : '{i18n>CustomerNo}'
 };
 
 annotate service.ZELOQUA with {
-    Invoice_Id @Common.Label : 'Invoice_Id'
+    Invoice_Id @Common.Label : '{i18n>InvoiceId}'
 };
 
 annotate service.ZELOQUA with {
-    Delivery_Id @Common.Label : 'Delivery_Id'
+    Delivery_Id @Common.Label : '{i18n>DeliveryId}'
 };
 
 annotate service.ZELOQUA with {
-    Opp_Id @Common.Label : 'Opp_Id'
+    Opp_Id @Common.Label : '{i18n>OpportunityId}'
 };
 
 annotate service.ZELOQUA with {
-    Material_No @Common.Label : 'Material_No'
+    Material_No @Common.Label : '{i18n>MaterialNo}'
 };
 
 annotate service.ZELOQUA with {
-    Order_Id @Common.Label : 'Order_Id'
+    Order_Id @Common.Label : '{i18n>OrderId}'
 };
 
 annotate service.ZELOQUA with {
-    Quote_Id @Common.Label : 'Quote_Id'
+    Quote_Id @Common.Label : '{i18n>QuoteId}'
 };
 

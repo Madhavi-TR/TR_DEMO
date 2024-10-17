@@ -5,11 +5,13 @@ service ztr_so_flow_demoService1
 {
     annotate ZELOQUA
     {
+        Opp_Id
+            @Common.Label : 'Opportunity ID';
         Material_No
             @Core.Description : 'Quote Status';
     }
 
-    @odata.draft.enabled
+    @odata.draft.enabled : false
     entity ZELOQUA as
         projection on my.ZELOQUA
         {
