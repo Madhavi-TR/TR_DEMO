@@ -36,6 +36,17 @@ service ztr_so_flow_demoService1
         {
             zCONGA
         };
+
+    @odata.draft.enabled
+    entity ZSAP_ORDER as
+        projection on my.ZSAP_ORDER
+        {
+            *
+        }
+        excluding
+        {
+            zSAP_Delivery
+        };
 }
 
 annotate ztr_so_flow_demoService1 with @requires :

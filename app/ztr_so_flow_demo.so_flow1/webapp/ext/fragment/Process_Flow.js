@@ -33,7 +33,6 @@ sap.ui.define([
                         value: 50
                       }
                   ]
-     
                  } 
                  else if (State === "Blocked") {
                     return[ {                
@@ -43,5 +42,9 @@ sap.ui.define([
                      } 
         },
 
+
+        onlane1: function(oEvent) {
+            MessageToast.show("Lane 1 pressed.");
+        }
     };
 });
