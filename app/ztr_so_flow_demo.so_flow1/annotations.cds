@@ -151,17 +151,17 @@ annotate service.ZELOQUA with @(
         },
         {
             $Type : 'UI.DataField',
-            Label : 'Opp_Docdate',
+            Label : '{i18n>OpportunityDocumentDate}',
             Value : Opp_Docdate,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'Material',
+            Label : '{i18n>Material}',
             Value : Material,
         },
         {
             $Type : 'UI.DataField',
-            Label : 'Customer_No',
+            Label : '{i18n>CustomerNo}',
             Value : Customer_No,
         },
         {
@@ -171,7 +171,7 @@ annotate service.ZELOQUA with @(
         {
             $Type : 'UI.DataField',
             Value : Delivery_Status,
-            Label : 'Delivery_Status',
+            Label : '{i18n>DeliveryStatus}',
         },
         {
             $Type : 'UI.DataField',
@@ -180,7 +180,7 @@ annotate service.ZELOQUA with @(
         {
             $Type : 'UI.DataField',
             Value : Amount_Total,
-            Label : 'Amount_Total',
+            Label : '{i18n>AmountTotal}',
         },
         {
             $Type : 'UI.DataField',
@@ -189,7 +189,7 @@ annotate service.ZELOQUA with @(
         {
             $Type : 'UI.DataField',
             Value : Invoice_Status,
-            Label : 'Invoice_Status',
+            Label : '{i18n>InvoiceStatus}',
         },
         {
             $Type : 'UI.DataField',
@@ -202,22 +202,22 @@ annotate service.ZELOQUA with @(
         {
             $Type : 'UI.DataField',
             Value : Order_Status,
-            Label : 'Order_Status',
+            Label : '{i18n>OrderStatus}',
         },
         {
             $Type : 'UI.DataField',
             Value : Order_Type,
-            Label : 'Order_Type',
+            Label : '{i18n>OrderType}',
         },
         {
             $Type : 'UI.DataField',
             Value : Price,
-            Label : 'Price',
+            Label : '{i18n>Price}',
         },
         {
             $Type : 'UI.DataField',
             Value : Quantity,
-            Label : 'Quantity',
+            Label : '{i18n>Quantity}',
         },
         {
             $Type : 'UI.DataField',
@@ -226,12 +226,12 @@ annotate service.ZELOQUA with @(
         {
             $Type : 'UI.DataField',
             Value : Quote_Status,
-            Label : 'Quote_Status',
+            Label : '{i18n>QuoteStatus}',
         },
         {
             $Type : 'UI.DataField',
             Value : UOM,
-            Label : 'UOM',
+            Label : '{i18n>Uom}',
         },
     ],
     UI.SelectionFields : [
@@ -247,34 +247,154 @@ annotate service.ZELOQUA with @(
 );
 
 annotate service.ZELOQUA with {
-    Asset_Id @Common.Label : '{i18n>AssetId}'
+    Asset_Id @(
+        Common.Label : '{i18n>AssetId}',
+        Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'ZELOQUA',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : Asset_Id,
+                    ValueListProperty : 'Asset_Id',
+                },
+            ],
+            Label : 'Asset ID',
+        },
+        Common.ValueListWithFixedValues : true,
+    )
 };
 
 annotate service.ZELOQUA with {
-    Customer_No @Common.Label : '{i18n>CustomerNo}'
+    Customer_No @(
+        Common.Label : '{i18n>CustomerNo}',
+        Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'ZELOQUA',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : Customer_No,
+                    ValueListProperty : 'Customer_No',
+                },
+            ],
+            Label : 'Customer No',
+        },
+        Common.ValueListWithFixedValues : true,
+    )
 };
 
 annotate service.ZELOQUA with {
-    Invoice_Id @Common.Label : '{i18n>InvoiceId}'
+    Invoice_Id @(
+        Common.Label : '{i18n>InvoiceId}',
+        Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'ZELOQUA',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : Invoice_Id,
+                    ValueListProperty : 'Invoice_Id',
+                },
+            ],
+            Label : 'Invoice ID',
+        },
+        Common.ValueListWithFixedValues : true,
+    )
 };
 
 annotate service.ZELOQUA with {
-    Delivery_Id @Common.Label : '{i18n>DeliveryId}'
+    Delivery_Id @(
+        Common.Label : '{i18n>DeliveryId}',
+        Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'ZELOQUA',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : Delivery_Id,
+                    ValueListProperty : 'Delivery_Id',
+                },
+            ],
+            Label : 'Delivery ID',
+        },
+        Common.ValueListWithFixedValues : true,
+    )
 };
 
 annotate service.ZELOQUA with {
-    Opp_Id @Common.Label : '{i18n>OpportunityId}'
+    Opp_Id @(
+        Common.Label : '{i18n>OpportunityId}',
+        Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'ZELOQUA',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : Opp_Id,
+                    ValueListProperty : 'Opp_Id',
+                },
+            ],
+            Label : 'Opportunity ID',
+        },
+        Common.ValueListWithFixedValues : true,
+    )
 };
 
 annotate service.ZELOQUA with {
-    Material_No @Common.Label : '{i18n>MaterialNo}'
+    Material_No @(
+        Common.Label : '{i18n>MaterialNo}',
+        Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'ZELOQUA',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : Material_No,
+                    ValueListProperty : 'Material',
+                },
+            ],
+            Label : 'Material No',
+        },
+        Common.ValueListWithFixedValues : true,
+    )
 };
 
 annotate service.ZELOQUA with {
-    Order_Id @Common.Label : '{i18n>OrderId}'
+    Order_Id @(
+        Common.Label : '{i18n>OrderId}',
+        Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'ZELOQUA',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : Order_Id,
+                    ValueListProperty : 'Order_Id',
+                },
+            ],
+            Label : 'Order ID',
+        },
+        Common.ValueListWithFixedValues : true,
+    )
 };
 
 annotate service.ZELOQUA with {
-    Quote_Id @Common.Label : '{i18n>QuoteId}'
+    Quote_Id @(
+        Common.Label : '{i18n>QuoteId}',
+        Common.ValueList : {
+            $Type : 'Common.ValueListType',
+            CollectionPath : 'ZELOQUA',
+            Parameters : [
+                {
+                    $Type : 'Common.ValueListParameterInOut',
+                    LocalDataProperty : Quote_Id,
+                    ValueListProperty : 'Quote_Id',
+                },
+            ],
+            Label : 'Quote ID',
+        },
+        Common.ValueListWithFixedValues : true,
+    )
 };
 

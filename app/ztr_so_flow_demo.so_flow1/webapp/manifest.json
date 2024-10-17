@@ -149,7 +149,7 @@
                     "Process_Flow": {
                       "template": "ztrsoflowdemo.soflow1.ext.fragment.Process_Flow",
                       "position": {
-                        "placement": "After",
+                        "placement": "Before",
                         "anchor": "GeneratedFacet1"
                       },
                       "title": "Process_Flow"
