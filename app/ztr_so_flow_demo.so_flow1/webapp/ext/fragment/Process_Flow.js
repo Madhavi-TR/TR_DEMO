@@ -1,4 +1,3 @@
-
 sap.ui.define([
     "sap/m/MessageToast",
     "sap/m/Dialog",
@@ -104,7 +103,7 @@ sap.ui.define([
         var oView = this;
 
         if (!this.byId("orderDialog")) {
-                Fragment.load({
+                
                     id: oView.byId("orderDialog"),
                     name: "ztrsoflowdemo.soflow1.ext.fragment.OrderForm",
                     controller: this
@@ -112,7 +111,7 @@ sap.ui.define([
                     oView.addDependent(oDialog);
                     oDialog.bindElement({
                         path: oEvent.getSource().getBindingContext().getPath()
-                    });
+                    });Fragment.load({
                     oDialog.open();
                 });
 
