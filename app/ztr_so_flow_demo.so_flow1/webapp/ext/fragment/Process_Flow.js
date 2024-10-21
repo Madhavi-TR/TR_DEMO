@@ -1,3 +1,4 @@
+
 sap.ui.define([
     "sap/m/MessageToast",
     "sap/m/Dialog",
@@ -55,56 +56,48 @@ sap.ui.define([
         onlane1: function(oEvent) {
           var sOrderNumber = oEvent.getSource().getBindingContext().getProperty("Order_Id");
           var sAssetNumber = oEvent.getSource().getBindingContext().getProperty("Asset_Id");
-          var oModel = new ODataModel({
-              serviceUrl: "/service/ztr_so_flow_demoService1/"
-          });
+          // var oModel = new ODataModel({
+          //     serviceUrl: "/service/ztr_so_flow_demoService1/"
+          // });
 
-          var oDialog = new Dialog({
-              title: "ORDER Details",
-              beginButton: new Button({
-                  text: "Close",
-                  press: function () {
-                      oDialog.close();
-                  }
-              }),
-     					endButton: new Button({
-						  text: "Close",
-						  press: function () {
-							this.oDefaultDialog.close();
-						}.bind(this)
-					})
-          });
+          // var oDialog = new Dialog({
+          //     title: "ORDER Details"
+          // });
 
-          oModel.bindContext("/ZSAP_ORDER(Order_Id='" + sOrderNumber + "',Asset_Id='" + sAssetNumber + "',IsActiveEntity=true)").requestObject().then(function(oData) {
-              var sDetails = JSON.stringify(oData, null, 2);
-              oDialog.getContent()[0].setText(sDetails);
-          }).catch(function() {
-              oDialog.getContent()[0].setText("Failed to load data.");
-          });
+          // oModel.bindContext("/ZSAP_ORDER(Order_Id='" + sOrderNumber + "',Asset_Id='" + sAssetNumber + "',IsActiveEntity=true)").requestObject().then(function(oData) {
+          //     var sDetails = JSON.stringify(oData, null, 2);
+          // }).catch(function(E) {
+          //    console.log(E);
+          // });
           
         var oView = this;
 
         if (!this.byId("orderDialog")) {
-                Fragment.load({
-                    id: oView.byId("orderDialog"),
+                this.loadFragment({
+                    id: "orderDialog",
                     name: "ztrsoflowdemo.soflow1.ext.fragment.OrderForm",
-                    controller: this
                 }).then(function (oDialog) {
                     oView.addDependent(oDialog);
                     oDialog.bindElement({
-                        path: oEvent.getSource().getBindingContext().getPath()
+                        path: "/ZSAP_ORDER(Order_Id='" + sOrderNumber + "',Asset_Id='" + sAssetNumber + "',IsActiveEntity=true)"
                     });
                     oDialog.open();
+                    oView.oDialog = oDialog;
                 });
 
             } else {
                 this.byId("orderDialog").bindElement({
-                    path: oEvent.getSource().getBindingContext().getPath()
+                    path: "/ZSAP_ORDER(Order_Id='" + sOrderNumber + "',Asset_Id='" + sAssetNumber + "',IsActiveEntity=true)"
                 });
                 this.byId("orderDialog").open();
             }
 
         },
+
+        closebutton:function (oEvent) {
+              this.oDialog.destroy();
+          }
+
            
         }
 }

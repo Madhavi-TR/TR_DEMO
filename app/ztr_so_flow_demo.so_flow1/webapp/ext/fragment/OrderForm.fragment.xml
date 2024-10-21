@@ -1,20 +1,16 @@
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:l="sap.ui.layout"
-	xmlns:mvc="sap.ui.core.mvc"  controllerName="app.ztr_so_flow_demo.so_flow1.webapp.ext.fragment.Process_Flow.js">
+	xmlns:mvc="sap.ui.core.mvc">
     <Dialog id="orderDialog" title="Order Details" class="sapUiResponsivePadding--header sapUiResponsivePadding--content sapUiResponsivePadding--footer">
         <content>
-            <VBox id="ph0">
-                <Label id="ph1" text="Order ID" />
-                <Text id="ph2" text="{Order_Id}" />
-                <Label id="ph3" text="Order Status" />
-                <Text id="ph4" text="{Order_Status}" />
-                <Label id="ph5" text="Customer Name" />
-                <Text id="ph6" text="{Customer_Name}" />
-                <Label id="ph7" text="Order Date" />
-                <Text id="ph8" text="{Order_Date}" />
+            <VBox id="ID0">
+                <Label id="ID1" text="Order ID" />
+                <Text id="ID2" text="{Order_Id}" />
+                <Label id="ID3" text="Order Status" />
+                <Text id="ID4" text="{Order_Status}" />
             </VBox>
         </content>
         <beginButton>
-            <Button id="ph9" text="Close" press="onCloseDialog" />
+            <Button id="ID5" text="Close" press="handler.closebutton" core:require="{ handler: 'ztrsoflowdemo/soflow1/ext/fragment/Process_Flow'}"/>
         </beginButton>
     </Dialog>
 </core:FragmentDefinition>
