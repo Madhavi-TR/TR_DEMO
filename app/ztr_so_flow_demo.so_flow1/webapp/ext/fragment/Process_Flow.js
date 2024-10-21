@@ -6,8 +6,11 @@ sap.ui.define([
     "sap/m/Button",
     "sap/m/Text",
     "sap/ui/model/json/JSONModel",
-    "sap/ui/model/odata/v4/ODataModel"
-], function(MessageToast, Dialog,Controller,Fragment, Button, Text,JSONModel, ODataModel) {
+    "sap/ui/model/odata/v4/ODataModel",
+    "sap/m/library",
+    "sap/m/StandardListItem",
+    "sap/m/List"
+], function(MessageToast, Dialog,Controller,Fragment, Button, Text,JSONModel, ODataModel,mobileLibrary,StandardListItem,List) {
     'use strict';
 
     return Controller.extend("app.ztr_so_flow_demo.so_flow1.webapp.ext.fragment.Process_Flow.js") ,{
@@ -56,19 +59,29 @@ sap.ui.define([
               serviceUrl: "/service/ztr_so_flow_demoService1/"
           });
 
-          var oDialog = new Dialog({
-              title: "ORDER Details",
-              content: new Text({ text: "Loading..." }),
-              beginButton: new Button({
-                  text: "Close",
-                  press: function () {
-                      oDialog.close();
-                  }
-              }),
-              afterClose: function() {
-                  oDialog.destroy();
-              }
-          });
+        //   var oDialog = new Dialog({
+        //       title: "ORDER Details",
+        //       content: new List({
+        //         items: {
+        //             path: "/ZSAP_ORDER",
+        //             template: new StandardListItem({
+        //                 title: "{Name}",
+        //                 counter: "{Quantity}"
+        //             })
+        //         }
+        //     }),
+        //       beginButton: new Button({
+        //           text: "Close",
+        //           press: function () {
+        //               oDialog.close();
+        //           }
+        //       }),
+        //       afterClose: function() {
+        //           oDialog.destroy();
+        //       }
+        //   });
+
+        var oDialog = new Fragment("ztrsoflowdemo.soflow1.ext.fragment.OrderForm",this);
 
           oModel.bindContext("/ZSAP_ORDER(Order_Id='" + sOrderNumber + "',Asset_Id='" + sAssetNumber + "',IsActiveEntity=true)").requestObject().then(function(oData) {
               var sDetails = JSON.stringify(oData, null, 2);
@@ -76,21 +89,39 @@ sap.ui.define([
           }).catch(function() {
               oDialog.getContent()[0].setText("Failed to load data.");
           });
-
-          oDialog.open();
           
-               if (!this.byId("orderDialog")) {
-                Fragment.load({
-                    id: oView.getId(),
-                    name: "ztrsoflowdemo.soflow1.ext.fragment.OrderForm",
-                    controller: this
-                }).then(function (oDialog) {
-                    oView.addDependent(oDialog);
-                    oDialog.bindElement({
-                        path: oEvent.getSource().getBindingContext().getPath()
-                    });
-                    oDialog.open();
-                });
+               if (!this.oDefaultDialog) {
+                this.oDefaultDialog = new Dialog({
+					title: "Order Details"
+,
+					beginButton: new Button({
+						type: ButtonType.Emphasized,
+						text: "OK",
+						press: function () {
+							this.oDefaultDialog.close();
+						}.bind(this)
+					}),
+					endButton: new Button({
+						text: "Close",
+						press: function () {
+							this.oDefaultDialog.close();
+						}.bind(this)
+					})
+				});
+
+				// to get access to the controller's model
+				this.getView().addDependent(this.oDefaultDialog);
+                // Fragment.load({
+                //     id: oView.byId("orderDialog"),
+                //     name: "ztrsoflowdemo.soflow1.ext.fragment.OrderForm",
+                //     controller: this
+                // }).then(function (oDialog) {
+                //     oView.addDependent(oDialog);
+                //     oDialog.bindElement({
+                //         path: oEvent.getSource().getBindingContext().getPath()
+                //     });
+                //     oDialog.open();
+                // });
 
             } else {
                 this.byId("orderDialog").bindElement({
@@ -98,10 +129,12 @@ sap.ui.define([
                 });
                 this.byId("orderDialog").open();
             }
+            // onCloseDialog: function () {
+            //     this.byId("orderDialog").close();
+            // }
+
         },
-        onCloseDialog: function () {
-              this.byId("orderDialog").close();
-          }
+
             
         }
 }
