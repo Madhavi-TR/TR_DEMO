@@ -82,28 +82,10 @@ sap.ui.define([
               oDialog.getContent()[0].setText("Failed to load data.");
           });
           
-        //   if (!this.oDefaultDialog) {
-        //         this.oDefaultDialog = new Dialog({
-				// 	title: "Order Details",
-				// 	beginButton: new Button({
-				// 		type: ButtonType.Emphasized,
-				// 		text: "OK",
-				// 		press: function () {
-				// 			this.oDefaultDialog.close();
-				// 		}.bind(this)
-				// 	}),
-				// 	endButton: new Button({
-				// 		text: "Close",
-				// 		press: function () {
-				// 			this.oDefaultDialog.close();
-				// 		}.bind(this)
-				// 	})
-				// });
-
         var oView = this;
 
         if (!this.byId("orderDialog")) {
-                
+                Fragment.load({
                     id: oView.byId("orderDialog"),
                     name: "ztrsoflowdemo.soflow1.ext.fragment.OrderForm",
                     controller: this
@@ -111,7 +93,7 @@ sap.ui.define([
                     oView.addDependent(oDialog);
                     oDialog.bindElement({
                         path: oEvent.getSource().getBindingContext().getPath()
-                    });Fragment.load({
+                    });
                     oDialog.open();
                 });
 
@@ -121,13 +103,9 @@ sap.ui.define([
                 });
                 this.byId("orderDialog").open();
             }
-            // onCloseDialog: function () {
-            //     this.byId("orderDialog").close();
-            // }
 
         },
-
-            
+           
         }
 }
 );
