@@ -109,7 +109,7 @@ annotate service.ZELOQUA with @(
         {
             $Type : 'UI.ReferenceFacet',
             ID : 'GeneratedFacet1',
-            Label : 'General Information',
+            Label : '{i18n>GeneralInformation}',
             Target : '@UI.FieldGroup#GeneratedGroup',
         },
     ],
@@ -222,6 +222,10 @@ annotate service.ZELOQUA with @(
     UI.HeaderInfo : {
         TypeName : '{i18n>StatusDetails}',
         TypeNamePlural : '',
+        Title : {
+            $Type : 'UI.DataField',
+            Value : Asset_Id,
+        },
     },
 );
 

@@ -175,7 +175,7 @@
                         "placement": "Before",
                         "anchor": "GeneratedFacet1"
                       },
-                      "title": "Process_Flow"
+                      "title": "{i18n>processStatus}"
                     }
                   }
                 },

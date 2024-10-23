@@ -4,35 +4,35 @@
         <content>
             <VBox id="ID0">
                 <HBox id="ID6" alignItems="Stretch" alignContent="SpaceBetween" justifyContent="SpaceBetween" >
-                <Label id="ID1" text="Order ID:"/>
+                <Label id="ID1" text="Order ID:" design="Bold"/>
                 <Text id="ID2" text="{Order_Id}" textAlign="End"/>
                 </HBox> 
                 <HBox id="ID7" alignItems="Stretch" alignContent="SpaceBetween" justifyContent="SpaceBetween">
-                <Label id="ID3" text="Order Status:" />
+                <Label id="ID3" text="Order Status:" design="Bold" />
                 <Text id="ID4" text="{Order_Status}" textAlign="End"/>  
                 </HBox>      
                     <HBox id="ID8" alignItems="Stretch" alignContent="SpaceBetween" justifyContent="SpaceBetween">
-                <Label id="ID10" text="Order Document Date:" />
+                <Label id="ID10" text="Order Document Date:" design="Bold"/>
                 <Text id="ID11" text="{Order_DocDate}" textAlign="End"/>  
                 </HBox>    
                     <HBox id="ID9" alignItems="Stretch" alignContent="SpaceBetween" justifyContent="SpaceBetween">
-                <Label id="ID12" text="Order Type:" />
+                <Label id="ID12" text="Order Type:" design="Bold" />
                 <Text id="ID13" text="{Order_Type}" textAlign="End"/>  
                 </HBox>     
                     <HBox id="ID14" alignItems="Stretch" alignContent="SpaceBetween" justifyContent="SpaceBetween">
-                <Label id="ID15" text="Quantity:" />
+                <Label id="ID15" text="Quantity:" design="Bold" />
                 <Text id="ID16" text="{Quantity}" textAlign="End"/>  
                 </HBox>    
                     <HBox id="ID17" alignItems="Stretch" alignContent="SpaceBetween" justifyContent="SpaceBetween">
-                <Label id="ID18" text="UOM:" />
+                <Label id="ID18" text="UOM:" design="Bold"/>
                 <Text id="ID19" text="{UOM}" textAlign="End"/>  
                 </HBox>    
                     <HBox id="ID20" alignItems="Stretch" alignContent="SpaceBetween" justifyContent="SpaceBetween">
-                <Label id="ID21" text="Price:" />
+                <Label id="ID21" text="Price:" design="Bold"/>
                 <Text id="ID22" text="{Price}" textAlign="End"/>  
                 </HBox>     
                     <HBox id="ID23" alignItems="Stretch" alignContent="SpaceBetween" justifyContent="SpaceBetween">
-                <Label id="ID24" text="Total Amount:" />
+                <Label id="ID24" text="Total Amount:" design="Bold"/>
                 <Text id="ID25" text="{Amount_Total}" textAlign="End"/>  
                 </HBox>     
             </VBox>
