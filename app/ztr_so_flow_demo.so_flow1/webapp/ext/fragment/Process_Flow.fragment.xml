@@ -12,8 +12,8 @@
                 state="{ path: 'Delivery_Status', formatter:'handler.SendState' , targetType : 'any' }"/>
                 <commons:ProcessFlowLaneHeader id="pf6" laneId="4" text="{Invoice_Id}" position="4" iconSrc="sap-icon://payment-approval"
                 state="{ path: 'Invoice_Status', formatter:'handler.SendState' , targetType : 'any' }"/>
-                <commons:ProcessFlowLaneHeader id="pf7" laneId="5" text="{Delivery_Id}" position="5" iconSrc="sap-icon://nurse"
-                state="{ path: 'Quote_Status', formatter:'handler.SendState' , targetType : 'any' }"/>
+                <!-- <commons:ProcessFlowLaneHeader id="pf7" laneId="5" text="{HR_Status}" position="5" iconSrc="sap-icon://nurse"
+                state="{ path: 'Quote_Status', formatter:'handler.SendState' , targetType : 'any' }"/> -->
             </commons:lanes>
         </commons:ProcessFlow>
     </VBox>

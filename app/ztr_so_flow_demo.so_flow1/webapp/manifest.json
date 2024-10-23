@@ -7,8 +7,8 @@
     "applicationVersion": {
       "version": "0.0.1"
     },
-    "title": "{{appTitle}}",
-    "description": "{{appDescription}}",
+    "title": "{{TR Sales Flow}}",
+    "description": "{{TR Sales Flow}}",
     "resources": "resources.json",
     "sourceTemplate": {
       "id": "@sap/generator-fiori:lrop",
@@ -127,6 +127,29 @@
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
                     "type": "ResponsiveTable"
+                  },
+                  "columns": {
+                    "DataField::Asset_Id": {
+                      "widthIncludingColumnHeader": true
+                    },
+                    "DataField::Opp_Status": {
+                      "widthIncludingColumnHeader": true
+                    },
+                    "DataField::Opp_Id": {
+                      "widthIncludingColumnHeader": true
+                    },
+                    "DataField::Opp_Docdate": {
+                      "widthIncludingColumnHeader": true
+                    },
+                    "DataField::Material": {
+                      "widthIncludingColumnHeader": true
+                    },
+                    "DataField::Customer_No": {
+                      "widthIncludingColumnHeader": true
+                    },
+                    "DataField::Delivery_Id": {
+                      "widthIncludingColumnHeader": true
+                    }
                   }
                 }
               },
@@ -155,6 +178,9 @@
                       "title": "Process_Flow"
                     }
                   }
+                },
+                "header": {
+                  "visible": true
                 }
               }
             }

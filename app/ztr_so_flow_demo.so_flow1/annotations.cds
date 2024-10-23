@@ -5,12 +5,12 @@ annotate service.ZELOQUA with @(
         Data : [
             {
                 $Type : 'UI.DataField',
-                Label : '{i18n>OppId}',
+                Label : '{i18n>OpportunityId1}',
                 Value : Opp_Id,
             },
             {
                 $Type : 'UI.DataField',
-                Label : '{i18n>OppStatus}',
+                Label : '{i18n>OpportunityStatus}',
                 Value : Opp_Status,
             },
             {
@@ -32,16 +32,6 @@ annotate service.ZELOQUA with @(
                 $Type : 'UI.DataField',
                 Label : '{i18n>OrderStatus}',
                 Value : Order_Status,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'Delivery_Id1',
-                Value : Delivery_Id1,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'Delivery_Status1',
-                Value : Delivery_Status1,
             },
             {
                 $Type : 'UI.DataField',
@@ -105,28 +95,13 @@ annotate service.ZELOQUA with @(
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'Order_Itemno',
-                Value : Order_Itemno,
-            },
-            {
-                $Type : 'UI.DataField',
                 Label : '{i18n>DeliveryId}',
                 Value : Delivery_Id,
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'Delivery_Itemno',
-                Value : Delivery_Itemno,
-            },
-            {
-                $Type : 'UI.DataField',
                 Label : '{i18n>DeliveryStatus}',
                 Value : Delivery_Status,
-            },
-            {
-                $Type : 'UI.DataField',
-                Label : 'Delivery_DocDate',
-                Value : Delivery_DocDate,
             },
         ],
     },
@@ -141,13 +116,17 @@ annotate service.ZELOQUA with @(
     UI.LineItem : [
         {
             $Type : 'UI.DataField',
-            Label : '{i18n>OpportunityId}',
-            Value : Opp_Id,
+            Value : Asset_Id,
         },
         {
             $Type : 'UI.DataField',
             Label : '{i18n>OpportunityStatus}',
             Value : Opp_Status,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : '{i18n>OpportunityId}',
+            Value : Opp_Id,
         },
         {
             $Type : 'UI.DataField',
@@ -172,10 +151,6 @@ annotate service.ZELOQUA with @(
             $Type : 'UI.DataField',
             Value : Delivery_Status,
             Label : '{i18n>DeliveryStatus}',
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : Asset_Id,
         },
         {
             $Type : 'UI.DataField',
@@ -244,6 +219,10 @@ annotate service.ZELOQUA with @(
         Order_Id,
         Quote_Id,
     ],
+    UI.HeaderInfo : {
+        TypeName : '{i18n>StatusDetails}',
+        TypeNamePlural : '',
+    },
 );
 
 annotate service.ZELOQUA with {

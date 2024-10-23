@@ -74,37 +74,38 @@ entity ZSAP_INVOICE
 {
     key Invoice_Id : TY_Document_No;
     key Invoice_Itemno : TY_Item_No;
+    key Asset_Id : TY_Asset_Id;
     Delivery_Id : TY_Document_No;
     Invoice_Status : Document_Status not null;
     Invoice_DocDate : Date not null;
     Order_Type : Order_Type;
-    key Asset_Id : TY_Asset_Id;
-    Material_No : TY_Material_No not null
-        @Core.Description : 'Quote Status';
+    Material_No : TY_Material_No not null;
     Customer_No : TY_Customer_No not null;
     Quantity : TY_QUANTITY;
     UOM : String(3);
     Price : TY_Amount(6,2);
     Amount_Total : TY_Amount(6,2);
     Inv_Del : Composition of many ZSAP_Delivery on Inv_Del.Delivery_Id = $self.Delivery_Id and Inv_Del.Asset_Id = $self.Asset_Id;
-    zBILL_TRUST : Association to one ZBILL_TRUST;
-    zHIGH_RADIUS : Association to one ZHIGH_RADIUS;
+    zBILL_TRUST: Association to one ZBILL_TRUST on zBILL_TRUST.Asset_Id = $self.Asset_Id;
+    zHIGH_RADIUS:Association to one ZHIGH_RADIUS on zHIGH_RADIUS.Asset_Id = $self.Asset_Id;
 }
 
 entity ZBILL_TRUST
 {
     key Asset_Id : String(10);
+    Key BT_Id: TY_Document_No;
     BT_Status : Document_Status;
     BT_Date : Date;
-    BT_Inv : Composition of many ZSAP_INVOICE on BT_Inv.Asset_Id = $self.Asset_Id;
+    BT_Inv : Association to one ZSAP_INVOICE on BT_Inv.Asset_Id = $self.Asset_Id;
 }
 
 entity ZHIGH_RADIUS
 {
     key Asset_Id : String(10);
+    Key HR_Id:TY_Document_No;
     HR_Status : Document_Status not null;
     HR_Date : Date not null;
-    HR_Inv : Composition of many ZSAP_INVOICE on HR_Inv.Asset_Id = $self.Asset_Id;
+    HR_Inv : Association to one ZSAP_INVOICE on HR_Inv.Asset_Id = $self.Asset_Id;
 }
 
 entity ZTR_SO_FLOW_JOIN as

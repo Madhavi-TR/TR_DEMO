@@ -56,20 +56,7 @@ sap.ui.define([
         onlane1: function(oEvent) {
           var sOrderNumber = oEvent.getSource().getBindingContext().getProperty("Order_Id");
           var sAssetNumber = oEvent.getSource().getBindingContext().getProperty("Asset_Id");
-          // var oModel = new ODataModel({
-          //     serviceUrl: "/service/ztr_so_flow_demoService1/"
-          // });
-
-          // var oDialog = new Dialog({
-          //     title: "ORDER Details"
-          // });
-
-          // oModel.bindContext("/ZSAP_ORDER(Order_Id='" + sOrderNumber + "',Asset_Id='" + sAssetNumber + "',IsActiveEntity=true)").requestObject().then(function(oData) {
-          //     var sDetails = JSON.stringify(oData, null, 2);
-          // }).catch(function(E) {
-          //    console.log(E);
-          // });
-          
+        
         var oView = this;
 
         if (!this.byId("orderDialog")) {
@@ -93,7 +80,6 @@ sap.ui.define([
             }
 
         },
-
         closebutton:function (oEvent) {
               this.oDialog.destroy();
           }
