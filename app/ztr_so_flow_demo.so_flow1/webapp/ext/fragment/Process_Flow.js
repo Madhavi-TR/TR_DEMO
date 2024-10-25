@@ -21,9 +21,10 @@ sap.ui.define([
       },
         SendState: function(State) {
             if (State === "Released") {
-              return[ { 
-                state: "Positive",
-                value: 50},
+              return[ 
+                // { 
+                // state: "Positive",
+                // value: 50},
               {
                 state: "Neutral",
                 value: 50
@@ -40,14 +41,14 @@ sap.ui.define([
                         state: "Positive",
                         value: 50},
                       {
-                        state: "Negative",
+                        state: "Neutral",
                         value: 50
                       }
                   ]
                  } 
                  else if (State === "Blocked") {
                     return[ {                
-                      state: "Critical",
+                      state: "Negative",
                       value: 100}]
          
                      } 
