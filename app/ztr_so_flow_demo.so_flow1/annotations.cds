@@ -103,6 +103,16 @@ annotate service.ZELOQUA with @(
                 Label : '{i18n>DeliveryStatus}',
                 Value : Delivery_Status,
             },
+            {
+                $Type : 'UI.DataField',
+                Value : Contract_Id,
+                Label : '{i18n>ContractId}',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : Contract_Status,
+                Label : '{i18n>ContractStatus}',
+            },
         ],
     },
     UI.Facets : [
