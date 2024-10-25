@@ -46,15 +46,38 @@ entity ZSAP_ORDER
     UOM : String(3);
     Price : TY_Amount(6,2);
     Amount_Total : TY_Amount(6,2);
-    zSAP_Delivery : Association to one ZSAP_Delivery on zSAP_Delivery.Order_Id = $self.Order_Id;
+     Currency : String(3);
+    // zSAP_Delivery : Association to one ZSAP_Delivery on zSAP_Delivery.Order_Id = $self.Order_Id;
     Quote_Order : Composition of many ZCONGA on Quote_Order.Quote_Id = $self.Quote_Id and Quote_Order.Asset_Id = $self.Asset_Id;
+    zSAP_Contract: Association to one ZSAP_CONTRACT on zSAP_Contract.Order_Id = $self.Order_Id and zSAP_Contract.Asset_Id = $self.Asset_Id;
+}
+
+entity ZSAP_CONTRACT
+{
+    key Contract_Id : TY_Document_No;
+    key Contract_Itemno : TY_Item_No;
+    key Asset_Id : TY_Asset_Id;
+    Order_Id : TY_Document_No;
+    Contract_Status : Document_Status;
+    Contract_DocDate : Date;
+    Contract_Type : Order_Type;
+    Material_No : TY_Material_No;
+    Customer_No : TY_Customer_No;
+    Quantity : TY_QUANTITY;
+    UOM : String(3);
+    Price : TY_Amount(6,2);
+    Amount_Total : TY_Amount(6,2);
+    Currency : String(3);
+    zSAP_Delivery : Association to one ZSAP_Delivery on zSAP_Delivery.Contract_Id = $self.Contract_Id and zSAP_Delivery.Asset_Id = $self.Asset_Id;
+    zSAP_ORDER : Association to one ZSAP_ORDER on zSAP_ORDER.Order_Id = $self.Order_Id and zSAP_ORDER.Asset_Id = $self.Asset_Id;
 }
 
 entity ZSAP_Delivery
 {
     key Delivery_Id : TY_Document_No;
     Delivery_Itemno : TY_Item_No;
-    Order_Id : TY_Document_No;
+    Contract_Id : TY_Document_No;
+    // Order_Id : TY_Document_No;
     Delivery_Status : Document_Status not null;
     Delivery_DocDate : Date not null;
     Order_Type : Order_Type;
@@ -66,7 +89,8 @@ entity ZSAP_Delivery
     UOM : String(3);
     Price : TY_Amount(6,2);
     Amount_Total : TY_Amount(6,2);
-    Order_Del : Composition of many ZSAP_ORDER on Order_Del.Order_Id = $self.Order_Id and Order_Del.Asset_Id = $self.Asset_Id;
+     Contract_Del : Association to one ZSAP_Delivery on Contract_Del.Contract_Id = $self.Contract_Id and Contract_Del.Asset_Id = $self.Asset_Id;
+    // Order_Del : Composition of many ZSAP_ORDER on Order_Del.Order_Id = $self.Order_Id and Order_Del.Asset_Id = $self.Asset_Id;
     zSAP_INVOICE : Association to one ZSAP_INVOICE on zSAP_INVOICE.Delivery_Id = $self.Delivery_Id and zSAP_INVOICE.Asset_Id = $self.Asset_Id;
 }
 
@@ -108,38 +132,38 @@ entity ZHIGH_RADIUS
     HR_Inv : Association to one ZSAP_INVOICE on HR_Inv.Asset_Id = $self.Asset_Id;
 }
 
-entity ZTR_SO_FLOW_JOIN as
-    select from ZELOQUA as Opp
-    left outer join ZCONGA as Qte on Opp.Opp_Id = Qte.Opp_Id
-    left outer join ZSAP_ORDER as Ord on Qte.Quote_Id = Ord.Quote_Id
-        and Qte.Asset_Id = Ord.Asset_Id
-    left outer join ZSAP_Delivery as Del on Ord.Order_Id = Del.Order_Id
-        and Ord.Asset_Id = Del.Asset_Id
-    left outer join ZSAP_INVOICE as Inv on Del.Delivery_Id = Inv.Delivery_Id
-        and Del.Asset_Id = Inv.Asset_Id
-    {
-        Key Opp.Opp_Id,
-        Opp.Opp_Status,
-        Opp_Docdate,
-        Opp.Customer_No,
-        Opp.Material,
-        Qte.Quote_Id,
-        Qte.Quote_DocDate,
-        Qte.Quote_Status,
-        Qte.Asset_Id,
-        Qte.Quantity,
-        Qte.Price,
-        Qte.Amount_Total,
-        Ord.Order_Id,
-        Ord.Order_DocDate,
-        Ord.Order_Status,
-        Del.Delivery_Id,
-        Del.Delivery_DocDate,
-        Del.Delivery_Status,
-        Inv.Invoice_Id,
-        Inv.Invoice_DocDate,
-        Inv.Invoice_Status,
-    };
+// entity ZTR_SO_FLOW_JOIN as
+//     select from ZELOQUA as Opp
+//     left outer join ZCONGA as Qte on Opp.Opp_Id = Qte.Opp_Id
+//     left outer join ZSAP_ORDER as Ord on Qte.Quote_Id = Ord.Quote_Id
+//         and Qte.Asset_Id = Ord.Asset_Id
+//     left outer join ZSAP_Delivery as Del on Ord.Order_Id = Del.Order_Id
+//         and Ord.Asset_Id = Del.Asset_Id
+//     left outer join ZSAP_INVOICE as Inv on Del.Delivery_Id = Inv.Delivery_Id
+//         and Del.Asset_Id = Inv.Asset_Id
+//     {
+//         Key Opp.Opp_Id,
+//         Opp.Opp_Status,
+//         Opp_Docdate,
+//         Opp.Customer_No,
+//         Opp.Material,
+//         Qte.Quote_Id,
+//         Qte.Quote_DocDate,
+//         Qte.Quote_Status,
+//         Qte.Asset_Id,
+//         Qte.Quantity,
+//         Qte.Price,
+//         Qte.Amount_Total,
+//         Ord.Order_Id,
+//         Ord.Order_DocDate,
+//         Ord.Order_Status,
+//         Del.Delivery_Id,
+//         Del.Delivery_DocDate,
+//         Del.Delivery_Status,
+//         Inv.Invoice_Id,
+//         Inv.Invoice_DocDate,
+//         Inv.Invoice_Status,
+//     };
 
 entity Entity1
 {

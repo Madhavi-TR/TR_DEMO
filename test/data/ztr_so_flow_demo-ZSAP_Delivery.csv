@@ -1,3 +1,3 @@
-Delivery_Id;Delivery_Itemno;Delivery_Status;Delivery_DocDate;Order_Type;Asset_Id;Material_No;Customer_No;Quantity;UOM;Price;Amount_Total;Order_Id
-Delive123;3240;Completed;2024-10-16;Physical;Asset_123;Material_No3402;Custom7768;7345;KSN;1989.02;6729.28;Order_123
-Delive456;8631;Incomplete;2024-10-16;Physical;Asset_456;Material_No959;Custom2489;2162;f1O;1105.41;7047.48;Order_456
+Delivery_Id;Delivery_Itemno;Delivery_Status;Delivery_DocDate;Order_Type;Asset_Id;Material_No;Customer_No;Quantity;UOM;Price;Amount_Total;Contract_Id
+Delive123;3240;Completed;2024-10-16;Physical;Asset_123;Material_No3402;Custom7768;7345;KSN;1989.02;6729.28;Contra123
+Delive456;8631;Incomplete;2024-10-16;Physical;Asset_456;Material_No959;Custom2489;2162;f1O;1105.41;7047.48;Contra456

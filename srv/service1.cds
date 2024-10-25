@@ -27,10 +27,16 @@ service ztr_so_flow_demoService1
             zCONGA.Order_Type,
             zCONGA.zSAP_ORDER.Order_Id,
             zCONGA.zSAP_ORDER.Order_Status,
-            zCONGA.zSAP_ORDER.zSAP_Delivery.Delivery_Id,
-            zCONGA.zSAP_ORDER.zSAP_Delivery.Delivery_Status,
-            zCONGA.zSAP_ORDER.zSAP_Delivery.zSAP_INVOICE.Invoice_Id,
-            zCONGA.zSAP_ORDER.zSAP_Delivery.zSAP_INVOICE.Invoice_Status
+            // zCONGA.zSAP_ORDER.zSAP_Delivery.Delivery_Id,
+            // zCONGA.zSAP_ORDER.zSAP_Delivery.Delivery_Status,
+            // zCONGA.zSAP_ORDER.zSAP_Delivery.zSAP_INVOICE.Invoice_Id,
+            // zCONGA.zSAP_ORDER.zSAP_Delivery.zSAP_INVOICE.Invoice_Status
+            zCONGA.zSAP_ORDER.zSAP_Contract.Contract_Id,
+            zCONGA.zSAP_ORDER.zSAP_Contract.Contract_Status,
+            zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Delivery.Delivery_Id,
+            zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Delivery.Delivery_Status,
+            zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Delivery.zSAP_INVOICE.Invoice_Id,
+            zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Delivery.zSAP_INVOICE.Invoice_Status,
         }
         excluding
         {
