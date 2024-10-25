@@ -1,3 +1,4 @@
 Contract_Id;Contract_Itemno;Asset_Id;Order_Id;Contract_Status;Contract_DocDate;Contract_Type;Material_No;Customer_No;Quantity;UOM;Price;Amount_Total;Currency
 Contra123;1870;Asset_123;Order_123;Completed;2024-10-25;Subscription;Material_No3099;Custom4783;1711;xmr;4636.76;6346.65;ff9
 Contra456;7311;Asset_456;Order_456;Completed;2024-10-25;Physical;Material_No9686;Custom677;7104;zFR;3910.02;3313.16;McU
+Contra789;3030;Asset_789;Order_789;Completed;2024-10-25;Subscription;Material_No6558;Custom9432;2525;jwt;1881.96;1007.32;1dd

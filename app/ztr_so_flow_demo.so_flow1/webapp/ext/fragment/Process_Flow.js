@@ -52,6 +52,35 @@ sap.ui.define([
                       value: 100}]
          
                      } 
+                  else if(State == "Entitled" ){
+                    return[ {                
+                      state: "Positive",
+                      value: 100}]
+                  }
+                  else if(State == "Not_Entitled"){
+                    return[                 
+                      { 
+                          state: "Critical",
+                          value: 50},
+                        {
+                          state: "Neutral",
+                          value: 50
+                        }
+                    ]
+
+                  }
+                  else if(State == "Entitlement_in_progress"){
+                    return[                 
+                      { 
+                          state: "Positive",
+                          value: 50},
+                        {
+                          state: "Neutral",
+                          value: 50
+                        }
+                    ]
+                    
+                  }
         },
 
         onlane1: function(oEvent) {

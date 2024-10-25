@@ -1,3 +1,4 @@
 Quote_Id;Quote_Itemno;Quote_Status;Quote_DocDate;Asset_Id;Material_No;Customer_No;Quantity;UOM;Price;Amount_Total;Order_Type;Opp_Id
 Quote_123;4350;Completed;2024-10-16;Asset_123;Material_No6223;Custom656;6029;3e8;Price2825;4224.30;Physical;Opp_123
 Quote_456;2870;Released;2024-10-16;Asset_456;Material_No8175;Custom4562;1296;YJD;Price1208;5763.76;Physical;Opp_456
+Quote_789;3159;Blocked;2024-10-25;Asset_789;Material_No6076;Custom9384;9359;8Xt;Price6445;8362.23;Subscription;Opp_789

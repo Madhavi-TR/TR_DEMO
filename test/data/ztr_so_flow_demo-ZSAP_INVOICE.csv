@@ -1,3 +1,4 @@
 Invoice_Id;Invoice_Itemno;Asset_Id;Delivery_Id;Invoice_Status;Invoice_DocDate;Order_Type;Material_No;Customer_No;Quantity;UOM;Price;Amount_Total
 Invoic958;8623;Asset_123;Delive123;Released;2024-10-22;Physical;Material_No5770;Custom1662;2704;74a;1627.02;9992.66
 Invoic9017;7052;Asset_456;Delive456;Blocked;2024-10-22;Subscription;Material_No5207;Custom6270;2526;8cy;9473.71;7660.92
+Invoic4141;7268;Asset_789;ENT1234;Completed;2024-10-25;Subscription;Material_No5007;Custom3140;705;qaS;7698.43;1543.53

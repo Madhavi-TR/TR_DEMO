@@ -182,6 +182,11 @@ type Document_Status : String enum
     Completed;
     Incomplete;
     Blocked;
+    //Added the below Status for Entitlement
+    Entitled; //Green
+    Not_Entitled; //Neutral + Orange
+    Entitlement_in_progress; //Neutral + Green
+
 }
 
 type Order_Type : String enum
