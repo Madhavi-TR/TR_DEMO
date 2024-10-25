@@ -10,7 +10,7 @@
                 state="{ path: 'Order_Status', formatter:'handler.SendState' , targetType : 'any' }" press="handler.onlane1"/>
                  <commons:ProcessFlowLaneHeader id="pf8" laneId="3" text="{Contract_Id}" position="3" iconSrc="sap-icon://nurse"
                 state="{ path: 'Contract_Status', formatter:'handler.SendState' , targetType : 'any' }"/>
-                <commons:ProcessFlowLaneHeader id="pf5" laneId="4" text="{ parts: [ { path:'Delivery_Id'},{ path:'Delivery_Status'} ], formatter:'handler.getStatus' }" position="4" iconSrc="sap-icon://money-bills"
+                <commons:ProcessFlowLaneHeader id="pf5" laneId="4" text="{ parts: [ { path:'Delivery_Id'},{ path:'Delivery_Status'} ], formatter:'handler.getStatus'}" position="4" iconSrc="sap-icon://money-bills"
                 state="{ path: 'Delivery_Status', formatter:'handler.SendState' , targetType : 'any' }"/>
                 <commons:ProcessFlowLaneHeader id="pf6" laneId="5" text="{Invoice_Id}" position="5" iconSrc="sap-icon://payment-approval"
                 state="{ path: 'Invoice_Status', formatter:'handler.SendState' , targetType : 'any' }"/>

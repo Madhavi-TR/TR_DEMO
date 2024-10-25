@@ -95,12 +95,12 @@ annotate service.ZELOQUA with @(
             },
             {
                 $Type : 'UI.DataField',
-                Label : '{i18n>DeliveryId}',
+                Label : '{i18n>DeliveryIdentitlementId}',
                 Value : Delivery_Id,
             },
             {
                 $Type : 'UI.DataField',
-                Label : '{i18n>DeliveryStatus}',
+                Label : '{i18n>DeliveryStatusentitlementStatus}',
                 Value : Delivery_Status,
             },
             {
