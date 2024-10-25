@@ -22,12 +22,13 @@ sap.ui.define([
         SendState: function(State) {
             if (State === "Released") {
               return[ 
-                // { 
-                // state: "Positive",
-                // value: 50},
+              {
+                state: "Positive",
+                value: 33
+              },
               {
                 state: "Neutral",
-                value: 50
+                value: 67
               } ]             
             } else if (State === "Completed") {
            return[ {                
@@ -39,10 +40,10 @@ sap.ui.define([
                 return[                 
                     { 
                         state: "Positive",
-                        value: 50},
+                        value: 66},
                       {
                         state: "Neutral",
-                        value: 50
+                        value: 34
                       }
                   ]
                  } 
@@ -113,6 +114,7 @@ sap.ui.define([
         closebutton:function (oEvent) {
               this.oDialog.destroy();
           },
+
           getStatus:function (ID,State){
             if(State =="Entitled"){
               return ID+" Status: "+State;
