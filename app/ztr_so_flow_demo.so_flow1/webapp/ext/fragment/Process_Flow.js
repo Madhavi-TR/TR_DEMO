@@ -112,7 +112,28 @@ sap.ui.define([
         },
         closebutton:function (oEvent) {
               this.oDialog.destroy();
+          },
+          getStatus:function (ID,State){
+            if(State =="Entitled"){
+              return ID+" Status: "+State;
+            }
+            else if(State == "Not_Entitled"){
+              return ID+" Status: Not Entitled";
+            }
+            else if(State == "Entitlement_in_progress"){
+              return ID+" Status: Entitlement in progress";
+            }
+            else if(State == "Released"){
+              return ID;
+            }
+            else if(State == "Completed"){
+              return ID;
+            }
+            else if(State == "Incomplete"){
+              return ID;
+            }
           }
+
 
            
         }
