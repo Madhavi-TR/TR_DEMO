@@ -7,8 +7,8 @@
     "applicationVersion": {
       "version": "0.0.1"
     },
-    "title": "{{TR Sales Flow}}",
-    "description": "{{TR Sales Flow}}",
+    "title": "{{trSalesFlow}}",
+    "description": "{{trSalesFlow}}",
     "resources": "resources.json",
     "sourceTemplate": {
       "id": "@sap/generator-fiori:lrop",
@@ -126,7 +126,12 @@
               "controlConfiguration": {
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
-                    "type": "ResponsiveTable"
+                    "type": "ResponsiveTable",
+                    "personalization": {
+                      "sort": true,
+                      "filter": true,
+                      "column": true
+                    }
                   },
                   "columns": {
                     "DataField::Asset_Id": {

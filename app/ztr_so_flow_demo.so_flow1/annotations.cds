@@ -30,11 +30,6 @@ annotate service.ZELOQUA with @(
             },
             {
                 $Type : 'UI.DataField',
-                Label : '{i18n>OrderStatus}',
-                Value : Order_Status,
-            },
-            {
-                $Type : 'UI.DataField',
                 Label : '{i18n>InvoiceId}',
                 Value : Invoice_Id,
             },
@@ -113,6 +108,26 @@ annotate service.ZELOQUA with @(
                 Value : Contract_Status,
                 Label : '{i18n>ContractStatus}',
             },
+            {
+                $Type : 'UI.DataField',
+                Value : Order_Status,
+                Label : 'Order_Status',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : overall_status,
+                Label : 'overall_status',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : Shipment_Id,
+                Label : 'Shipment_Id',
+            },
+            {
+                $Type : 'UI.DataField',
+                Value : Shipment_Status,
+                Label : 'Shipment_Status',
+            },
         ],
     },
     UI.Facets : [
@@ -130,23 +145,8 @@ annotate service.ZELOQUA with @(
         },
         {
             $Type : 'UI.DataField',
-            Label : '{i18n>OpportunityStatus}',
-            Value : Opp_Status,
-        },
-        {
-            $Type : 'UI.DataField',
-            Label : '{i18n>OpportunityId}',
-            Value : Opp_Id,
-        },
-        {
-            $Type : 'UI.DataField',
-            Label : '{i18n>OpportunityDocumentDate}',
-            Value : Opp_Docdate,
-        },
-        {
-            $Type : 'UI.DataField',
-            Label : '{i18n>Material}',
-            Value : Material,
+            Value : Overall_status,
+            Label : '{i18n>OverallStatus}',
         },
         {
             $Type : 'UI.DataField',
@@ -155,12 +155,17 @@ annotate service.ZELOQUA with @(
         },
         {
             $Type : 'UI.DataField',
-            Value : Delivery_Id,
+            Value : Material_No,
         },
         {
             $Type : 'UI.DataField',
-            Value : Delivery_Status,
-            Label : '{i18n>DeliveryStatus}',
+            Value : Quantity,
+            Label : '{i18n>Quantity}',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : UOM,
+            Label : '{i18n>Uom}',
         },
         {
             $Type : 'UI.DataField',
@@ -169,25 +174,8 @@ annotate service.ZELOQUA with @(
         },
         {
             $Type : 'UI.DataField',
-            Value : Invoice_Id,
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : Invoice_Status,
-            Label : '{i18n>InvoiceStatus}',
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : Material_No,
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : Order_Id,
-        },
-        {
-            $Type : 'UI.DataField',
-            Value : Order_Status,
-            Label : '{i18n>OrderStatus}',
+            Value : Currency,
+            Label : 'Currency',
         },
         {
             $Type : 'UI.DataField',
@@ -196,13 +184,18 @@ annotate service.ZELOQUA with @(
         },
         {
             $Type : 'UI.DataField',
-            Value : Price,
-            Label : '{i18n>Price}',
+            Label : '{i18n>OpportunityId}',
+            Value : Opp_Id,
         },
         {
             $Type : 'UI.DataField',
-            Value : Quantity,
-            Label : '{i18n>Quantity}',
+            Label : '{i18n>OpportunityStatus}',
+            Value : Opp_Status,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Shipment_Status,
+            Label : 'Shipment_Status',
         },
         {
             $Type : 'UI.DataField',
@@ -215,8 +208,40 @@ annotate service.ZELOQUA with @(
         },
         {
             $Type : 'UI.DataField',
-            Value : UOM,
-            Label : '{i18n>Uom}',
+            Value : Order_Id,
+        },
+        {
+            $Type : 'UI.DataField',
+            Label : '{i18n>OpportunityDocumentDate}',
+            Value : Opp_Docdate,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Order_Status,
+            Label : '{i18n>OrderStatus}',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Delivery_Id,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Delivery_Status,
+            Label : '{i18n>DeliveryStatus}',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Invoice_Id,
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Invoice_Status,
+            Label : '{i18n>InvoiceStatus}',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Price,
+            Label : '{i18n>Price}',
         },
     ],
     UI.SelectionFields : [
