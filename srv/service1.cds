@@ -93,27 +93,54 @@ service ztr_so_flow_demoService1
                 and zCONGA.zSAP_ORDER.zSAP_Contract.Contract_Status = 'Completed'
                 and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.Shipment_Status = 'Completed'
                 and zCONGA.Order_Type = 'Subscription'
-                and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.Delivery_Status = 'Not_Entitled' then 'Not yet Entitled' when ZELOQUA.Opp_Status = 'Completed'
+                and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.Delivery_Status = 'Not_Entitled' then 'Not yet Entitled' 
+                when ZELOQUA.Opp_Status = 'Completed'
                 and zCONGA.Quote_Status = 'Completed'
                 and zCONGA.zSAP_ORDER.Order_Status = 'Completed'
                 and zCONGA.zSAP_ORDER.zSAP_Contract.Contract_Status = 'Completed'
                 and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.Shipment_Status = 'Completed'
                 and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.Delivery_Status = 'Completed'
-                and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.zSAP_INVOICE.Invoice_Status = 'Blocked' then 'Invoice Blocked' when ZELOQUA.Opp_Status = 'Completed'
+                and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.zSAP_INVOICE.Invoice_Status = 'Blocked' then 'Invoice Blocked' 
+                when ZELOQUA.Opp_Status = 'Completed'
                 and zCONGA.Quote_Status = 'Completed'
                 and zCONGA.zSAP_ORDER.Order_Status = 'Completed'
                 and zCONGA.zSAP_ORDER.zSAP_Contract.Contract_Status = 'Completed'
                 and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.Shipment_Status = 'Completed'
                 and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.Delivery_Status = 'Completed'
-                and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.zSAP_INVOICE.Invoice_Status = 'Released' then 'Invoice in Process' when ZELOQUA.Opp_Status = 'Completed'
+                and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.zSAP_INVOICE.Invoice_Status = 'Released' then 'Invoice in Process' 
+//Payment in Process                
+                when ZELOQUA.Opp_Status = 'Completed'
                 and zCONGA.Quote_Status = 'Completed'
                 and zCONGA.zSAP_ORDER.Order_Status = 'Completed'
                 and zCONGA.zSAP_ORDER.zSAP_Contract.Contract_Status = 'Completed'
                 and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.Shipment_Status = 'Completed'
                 and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.Delivery_Status = 'Completed'
-                and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.zSAP_INVOICE.Invoice_Status = 'Completed' then 'Invoice Completed' else 'Invalid Record' end as Overall_status : String,
+                and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.zSAP_INVOICE.Invoice_Status = 'Completed' 
+                and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.zSAP_INVOICE.zBILL_TRUST.BT_Status  = 'Released' then 'Payment in Process'
+ //Payment Blocked       
+                when ZELOQUA.Opp_Status = 'Completed'
+                and zCONGA.Quote_Status = 'Completed'
+                and zCONGA.zSAP_ORDER.Order_Status = 'Completed'
+                and zCONGA.zSAP_ORDER.zSAP_Contract.Contract_Status = 'Completed'
+                and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.Shipment_Status = 'Completed'
+                and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.Delivery_Status = 'Completed'
+                and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.zSAP_INVOICE.Invoice_Status = 'Completed'
+                and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.zSAP_INVOICE.zBILL_TRUST.BT_Status = 'Blocked' then 'Payment Blocked'  
+//Payment Completed
+                when ZELOQUA.Opp_Status = 'Completed'
+                and zCONGA.Quote_Status = 'Completed'
+                and zCONGA.zSAP_ORDER.Order_Status = 'Completed'
+                and zCONGA.zSAP_ORDER.zSAP_Contract.Contract_Status = 'Completed'
+                and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.Shipment_Status = 'Completed'
+                and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.Delivery_Status = 'Completed'
+                and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.zSAP_INVOICE.Invoice_Status = 'Completed'
+                and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.zSAP_INVOICE.zBILL_TRUST.BT_Status = 'Completed' then 'Payment Completed'  
+                else 'Invalid Record' end as Overall_status : String,
+
             case when zCONGA.Order_Type = 'Subscription' then 'Usage' else 'SubShpmnt' end as Shipment_Desc : String,
+
             case when zCONGA.Order_Type = 'Subscription' then 'Entitlement' else 'Delivery' end as Delivery_Desc : String,
+
             case when zCONGA.Order_Type = 'Subscription'
                 and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.Delivery_Status = 'Entitlement_in_progress' then 'in Process' when zCONGA.Order_Type = 'Subscription'
                 and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.Delivery_Status = 'Not_Entitled' then 'not Started' when zCONGA.Order_Type = 'Subscription'
@@ -121,13 +148,17 @@ service ztr_so_flow_demoService1
                 and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.Delivery_Status = 'Released' then 'in Process' when zCONGA.Order_Type = 'Physical'
                 and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.Delivery_Status = 'Blocked' then 'Blocked' when zCONGA.Order_Type = 'Physical'
                 and zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.Delivery_Status = 'Completed' then 'Completed' else '' end as Delivery_Status1 : String,
+
           Case when Opp_Status = 'Released' then 'in Process'  else Opp_Status end as Opp_Status1: String,
+
           Case when zCONGA.Quote_Status = 'Released' then 'in Process'  else zCONGA.Quote_Status end as Quote_Status1: String,
+
           Case when zCONGA.zSAP_ORDER.Order_Status = 'Released' then 'in Process'  else zCONGA.zSAP_ORDER.Order_Status end as Order_Status1: String,
-          Case when zCONGA.zSAP_ORDER.zSAP_Contract.Contract_Status = 'Released' then 'in Process'  else zCONGA.zSAP_ORDER.zSAP_Contract.Contract_Status end as Contract_Status1: String
-          
 
+          Case when zCONGA.zSAP_ORDER.zSAP_Contract.Contract_Status = 'Released' then 'in Process'  else zCONGA.zSAP_ORDER.zSAP_Contract.Contract_Status end as Contract_Status1: String,
 
+          Case when zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.zSAP_INVOICE.zBILL_TRUST.BT_Status = 'Released' then 'in Process' else zCONGA.zSAP_ORDER.zSAP_Contract.zSAP_Shipment.zSAP_Delivery.zSAP_INVOICE.zBILL_TRUST.BT_Status end as BT_Status1: String
+        
         }
         excluding
         {

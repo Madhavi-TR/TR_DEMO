@@ -5,11 +5,11 @@
 <commons:ProcessFlowLaneHeader id="pf1" laneId="0" text="Opportunity {Opp_Status1} {Opp_Id}"  position="0" iconSrc="sap-icon://order-status" state="{ path: 'Opp_Status', formatter:'handler.SendState' , targetType : 'any' }"/>
 <commons:ProcessFlowLaneHeader id="pf2" laneId="1" text="Quotation {Quote_Status1} {Quote_Id} " position="1" iconSrc="sap-icon://monitor-payments" state="{ path: 'Quote_Status', formatter:'handler.SendState' , targetType : 'any' }"/>
 <commons:ProcessFlowLaneHeader id="pf3" laneId="2" text="Order {Order_Status1} {Order_Id}" position="2" iconSrc="sap-icon://payment-approval" state="{ path: 'Order_Status', formatter:'handler.SendState' , targetType : 'any' }" press="handler.onlane1"/>
-<commons:ProcessFlowLaneHeader id="pf8" laneId="3" text="Contract {Contract_Status} {Contract_Id} " position="3" iconSrc="sap-icon://nurse" state="{ path: 'Contract_Status', formatter:'handler.SendState' , targetType : 'any' }"/>
-<commons:ProcessFlowLaneHeader id="pf9" laneId="6" text="{Shipment_Desc} {Shipment_Status} {Shipment_Id} " position="4" iconSrc="sap-icon://nurse" state="{ path: 'Shipment_Status', formatter:'handler.SendState' , targetType : 'any' }"/>
+<commons:ProcessFlowLaneHeader id="pf8" laneId="3" text="Contract {Contract_Status1} {Contract_Id} " position="3" iconSrc="sap-icon://nurse" state="{ path: 'Contract_Status', formatter:'handler.SendState' , targetType : 'any' }"/>
+<commons:ProcessFlowLaneHeader id="pf9" laneId="6" text="{Shipment_Desc} {Shipment_Status1} {Shipment_Id} " position="4" iconSrc="sap-icon://nurse" state="{ path: 'Shipment_Status', formatter:'handler.SendState' , targetType : 'any' }"/>
 <commons:ProcessFlowLaneHeader id="pf5" laneId="4" text="{Delivery_Desc} {Delivery_Status1} {Delivery_Id}" position="5" iconSrc="sap-icon://money-bills" state="{ path: 'Delivery_Status', formatter:'handler.SendState' , targetType : 'any' }"/>
-<commons:ProcessFlowLaneHeader id="pf6" laneId="5" text="Invoice {Invoice_Status} {Invoice_Id} " position="6" iconSrc="sap-icon://payment-approval" state="{ path: 'Invoice_Status', formatter:'handler.SendState' , targetType : 'any' }"/>
-<commons:ProcessFlowLaneHeader id="pf4" laneId="7" text="Payment {BT_Status} {BT_Id} " position="7" iconSrc="sap-icon://payment-approval" state="{ path: 'BT_Status', formatter:'handler.SendState' , targetType : 'any' }"/>
+<commons:ProcessFlowLaneHeader id="pf6" laneId="5" text="Invoice {Invoice_Status1} {Invoice_Id} " position="6" iconSrc="sap-icon://payment-approval" state="{ path: 'Invoice_Status', formatter:'handler.SendState' , targetType : 'any' }"/>
+<commons:ProcessFlowLaneHeader id="pf4" laneId="7" text="Payment {BT_Status1} {BT_Id} " position="7" iconSrc="sap-icon://payment-approval" state="{ path: 'BT_Status', formatter:'handler.SendState' , targetType : 'any' }"/>
 </commons:lanes>
 </commons:ProcessFlow>
 </VBox>
