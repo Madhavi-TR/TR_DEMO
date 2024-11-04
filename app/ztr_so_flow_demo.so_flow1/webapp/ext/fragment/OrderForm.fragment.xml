@@ -35,6 +35,10 @@
                 <Label id="ID24" text="Total Amount:" design="Bold"/>
                 <Text id="ID25" text="{Amount_Total}" textAlign="End"/>  
                 </HBox>     
+                <HBox id="ID26" alignItems="Stretch" alignContent="SpaceBetween" justifyContent="SpaceBetween">
+                <Label id="ID27" text="Currency:" design="Bold"/>
+                <Text id="ID28" text="{Currency}" textAlign="End"/>  
+                </HBox>   
             </VBox>
         </content>
         <beginButton>

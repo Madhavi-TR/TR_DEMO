@@ -6,6 +6,7 @@ entity ZELOQUA
     key Asset_Id : TY_Asset_Id;
     Opp_Status : Document_Status;
     Opp_Docdate : Date;
+    Order_Type : Order_Type;
     Material : String(10);
     Customer_No : String(10);
     zCONGA : Association to one ZCONGA on zCONGA.Opp_Id = $self.Opp_Id and zCONGA.Asset_Id = $self.Asset_Id;
@@ -24,8 +25,9 @@ entity ZCONGA
     Quantity : TY_QUANTITY;
     UOM : String(3);
     Price : TY_Price;
-    Amount_Total : TY_Amount(6,2);
+    Amount_Total : TY_Amount;
     Order_Type : Order_Type;
+    Currency : String(3);
     Opp_Id : TY_Document_No;
     zSAP_ORDER : Association to one ZSAP_ORDER on zSAP_ORDER.Quote_Id = $self.Quote_Id and zSAP_ORDER.Asset_Id = $self.Asset_Id;
     Quote_Opp : Association to one ZELOQUA on Quote_Opp.Opp_Id = $self.Opp_Id and Quote_Opp.Asset_Id = $self.Asset_Id;
@@ -45,11 +47,13 @@ entity ZSAP_ORDER
         @Core.Description : 'Quote Status';
     Quantity : TY_QUANTITY;
     UOM : String(3);
-    Price : TY_Amount(6,2);
-    Amount_Total : TY_Amount(6,2);
+    Price : TY_Amount;
+    Amount_Total : TY_Amount;
     Currency : String(3);
     Quote_Order : Association to one ZCONGA on Quote_Order.Quote_Id = $self.Quote_Id and Quote_Order.Asset_Id = $self.Asset_Id;
     zSAP_Contract : Association to one ZSAP_CONTRACT on zSAP_Contract.Order_Id = $self.Order_Id and zSAP_Contract.Asset_Id = $self.Asset_Id;
+    Customer_Name : Association to one Customer_Data on Customer_Name.Customer_No = $self.Customer_No;
+    Material_Desc : Association to one Material_Data on Material_Desc.Material_No = $self.Material_No;
 }
 
 entity ZSAP_CONTRACT
@@ -65,8 +69,8 @@ entity ZSAP_CONTRACT
     Customer_No : TY_Customer_No;
     Quantity : TY_QUANTITY;
     UOM : String(3);
-    Price : TY_Amount(6,2);
-    Amount_Total : TY_Amount(6,2);
+    Price : TY_Amount;
+    Amount_Total : TY_Amount;
     Currency : String(3);
     zSAP_Shipment : Association to one ZSAP_SUBSHP on zSAP_Shipment.Contract_Id = $self.Contract_Id and zSAP_Shipment.Asset_Id = $self.Asset_Id;
     zSAP_ORDER : Association to one ZSAP_ORDER on zSAP_ORDER.Order_Id = $self.Order_Id and zSAP_ORDER.Asset_Id = $self.Asset_Id;
@@ -85,8 +89,8 @@ entity ZSAP_SUBSHP
     Customer_No : TY_Customer_No;
     Quantity : TY_QUANTITY;
     UOM : String(3);
-    Price : TY_Amount(6,2);
-    Amount_Total : TY_Amount(6,2);
+    Price : TY_Amount;
+    Amount_Total : TY_Amount;
     Currency : String(3);
     zSAP_Delivery : Association to one ZSAP_Delivery on zSAP_Delivery.Shipment_Id = $self.Shipment_Id and zSAP_Delivery.Asset_Id = $self.Asset_Id;
     zSAP_contract : Association to one ZSAP_CONTRACT on zSAP_contract.Contract_Id = $self.Contract_Id and zSAP_contract.Asset_Id = $self.Asset_Id;
@@ -106,8 +110,9 @@ entity ZSAP_Delivery
     Customer_No : TY_Customer_No not null;
     Quantity : TY_QUANTITY;
     UOM : String(3);
-    Price : TY_Amount(6,2);
-    Amount_Total : TY_Amount(6,2);
+    Price : TY_Amount;
+    Amount_Total : TY_Amount;
+    Currency : String(3);
     Shipment_Del : Association to one ZSAP_SUBSHP on Shipment_Del.Shipment_Id = $self.Shipment_Id and Shipment_Del.Asset_Id = $self.Asset_Id;
     zSAP_INVOICE : Association to one ZSAP_INVOICE on zSAP_INVOICE.Delivery_Id = $self.Delivery_Id and zSAP_INVOICE.Asset_Id = $self.Asset_Id;
 }
@@ -125,8 +130,9 @@ entity ZSAP_INVOICE
     Customer_No : TY_Customer_No;
     Quantity : TY_QUANTITY;
     UOM : String(3);
-    Price : TY_Amount(6,2);
-    Amount_Total : TY_Amount(6,2);
+    Price : TY_Amount;
+    Amount_Total : TY_Amount;
+    Currency : String(3);
     Inv_Del : Association to one ZSAP_Delivery on Inv_Del.Delivery_Id = $self.Delivery_Id and Inv_Del.Asset_Id = $self.Asset_Id;
     zBILL_TRUST : Association to one ZBILL_TRUST on zBILL_TRUST.Asset_Id = $self.Asset_Id;
     zHIGH_RADIUS : Association to one ZHIGH_RADIUS on zHIGH_RADIUS.Asset_Id = $self.Asset_Id;
@@ -138,7 +144,7 @@ entity ZBILL_TRUST
     key BT_Id : TY_Document_No;
     BT_Status : Document_Status;
     BT_DocDate : Date;
-    Order_Type: Order_Type;
+    Order_Type : Order_Type;
     BT_Inv : Association to one ZSAP_INVOICE on BT_Inv.Asset_Id = $self.Asset_Id;
 }
 
@@ -151,9 +157,22 @@ entity ZHIGH_RADIUS
     HR_Inv : Association to one ZSAP_INVOICE on HR_Inv.Asset_Id = $self.Asset_Id;
 }
 
-entity Entity1
+entity Customer_Data
 {
-    key ID : UUID;
+    key Customer_No : String(10);
+    Customer_Name : String(35);
+}
+
+entity Material_Data
+{
+    key Material_No : String(10);
+    Material_Desc : String(40);
+
+}
+
+entity Order_Data
+{
+    key Order_Id : TY_Document_No;
 }
 
 type Doc_Category : String enum
@@ -179,7 +198,7 @@ type Order_Type : String enum
     Subscription;
 }
 
-type TY_Amount : Decimal;
+type TY_Amount : Decimal(8,2);
 
 type TY_Asset_Id : String(10);
 
@@ -191,6 +210,6 @@ type TY_Item_No : Integer;
 
 type TY_Material_No : String(20);
 
-type TY_Price : Decimal(6,2);
+type TY_Price : Decimal(8,2);
 
 type TY_QUANTITY : Decimal(6,3);
